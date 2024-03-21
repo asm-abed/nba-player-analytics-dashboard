@@ -2,11 +2,11 @@ if 'data_loader' not in globals():
     from mage_ai.data_preparation.decorators import data_loader
 if 'test' not in globals():
     from mage_ai.data_preparation.decorators import test
-
+import pandas as pd
 
 @data_loader
 def load_data(*args, **kwargs):
-    df = 
+    df = pd.read_csv('')
 
     return {}
 

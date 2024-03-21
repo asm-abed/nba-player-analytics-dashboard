@@ -19,7 +19,7 @@ services:
     ports:
       - 6789:6789
     volumes:
-      - .:/home/src/
+      - ~:/home/src/
       - ~/Documents/secrets/personal-gcp.json:/home/src/personal-gcp.json
     restart: on-failure:5
   postgres:

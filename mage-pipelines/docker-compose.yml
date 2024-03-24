@@ -1,0 +1,13 @@
+version: '3'
+services:
+  magic:
+    image: mageai/mageai:latest
+    command: mage start nba_pipelines
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 6789:6789
+    volumes:
+      - .:/home/src/
+    restart: on-failure:5

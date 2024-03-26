@@ -9,7 +9,7 @@ if 'data_exporter' not in globals():
 
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "/home/src/gcp_srv/nba_gcp_credentials.json"
 
-bucket_name = 'dez-nba-datalake-boxscore'
+bucket_name = 'dez-nba-datalake-match_linescores'
 project_id = 'dez-nba-analytics'
 
 @data_exporter
@@ -24,8 +24,6 @@ def export_data(data, *args, **kwargs):
 
         for month in range(1,13):
             month_df = year_df[year_df['game_date'].dt.month == month]
-
-            month_df.game_date = pd.to_datetime(month_df.game_date)
 
             print(f'uploading data from {month:02d}/{year}')
 

@@ -24,7 +24,7 @@ def load_from_google_cloud_storage(*args, **kwargs):
     config_profile = 'default'
 
     bucket_name = 'nba_raw_source'
-    object_key = 'player_statistics.csv'
+    object_key = 'match_line_scores.csv'
 
     return GoogleCloudStorage.with_config(ConfigFileLoader(config_path, config_profile)).load(
         bucket_name,

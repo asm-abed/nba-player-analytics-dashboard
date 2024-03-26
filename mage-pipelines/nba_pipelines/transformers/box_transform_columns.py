@@ -8,7 +8,7 @@ import pandas as pd
 def transform(data, *args, **kwargs):
     df = pd.DataFrame(data)
 
-    df.date = pd.to_datetime(df.date, format='%Y-%m-%d')
+    df.date = pd.to_datetime(df.date)
 
     df.rename(columns={
         'MIN': 'mins-played',
@@ -21,12 +21,21 @@ def transform(data, *args, **kwargs):
         'FTM': 'free-throw-made',
         'FTA': 'free-throw-attempt',
         'FT%': 'free-throw-pct',
-        '+/-': 'plusminus'
+        '+/-': 'plusminus',
+        'type': 'season_type',
+        'season': 'season_id',
+        'gameid': 'game_id',
+        'date':'game_date',
+        'playerid':'player_id'
         }, inplace=True)
 
     df['field-goal-pct'] = df['field-goal-pct']/100
     df['three-pt-pct'] = df['three-pt-pct']/100
     df['free-throw-pct']= df['free-throw-pct']/100
+
+    df.loc[~df['season_type'].isin(['regular', 'playoff']), 'season_type'] = 'Others'
+    df.loc[df['season_type'] == 'regular', 'season_type'] = 'Regular Season'
+    df.loc[df['season_type'] == 'playoff', 'season_type'] = 'Playoffs'
 
     return df
 

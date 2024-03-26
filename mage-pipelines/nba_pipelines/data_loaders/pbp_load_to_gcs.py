@@ -7,10 +7,6 @@ if 'data_loader' not in globals():
 if 'test' not in globals():
     from mage_ai.data_preparation.decorators import test
 
-import pyarrow as pa
-
-
-
 
 @data_loader
 def load_from_google_cloud_storage(*args, **kwargs):
@@ -24,7 +20,7 @@ def load_from_google_cloud_storage(*args, **kwargs):
     config_profile = 'default'
 
     bucket_name = 'nba_raw_source'
-    object_key = 'player_statistics.csv'
+    object_key = 'play_by_play01.csv'
 
     return GoogleCloudStorage.with_config(ConfigFileLoader(config_path, config_profile)).load(
         bucket_name,

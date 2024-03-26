@@ -8,28 +8,23 @@ if 'test' not in globals():
     from mage_ai.data_preparation.decorators import test
 
 import pyarrow as pa
+import pyarrow.parquet as pq
+from pyarrow.fs import GcsFileSystem
 
-
-
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "/home/src/gcp_srv/nba_gcp_credentials.json"
+project_id = 'dez-nba-analytics'
 
 @data_loader
-def load_from_google_cloud_storage(*args, **kwargs):
-    """
-    Template for loading data from a Google Cloud Storage bucket.
-    Specify your configuration settings in 'io_config.yaml'.
-
-    Docs: https://docs.mage.ai/design/data-loading#googlecloudstorage
-    """
-    config_path = path.join(get_repo_path(), 'io_config.yaml')
-    config_profile = 'default'
-
-    bucket_name = 'nba_raw_source'
-    object_key = 'player_statistics.csv'
-
-    return GoogleCloudStorage.with_config(ConfigFileLoader(config_path, config_profile)).load(
-        bucket_name,
-        object_key,
+def load_data(*args, **kwargs):
+    bucket_name = 'dez-nba-datalake-boxscore'
+    root_path = f"{bucket_name}/"    
+    pa_table = pq.read_table(
+        source=root_path,
+        filesystem=GcsFileSystem(),        
     )
+
+    return pa_table.to_pandas()
+
 
 
 @test

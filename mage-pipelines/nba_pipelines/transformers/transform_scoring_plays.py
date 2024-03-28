@@ -7,7 +7,7 @@ import pandas as pd
 @transformer
 def transform(data, *args, **kwargs):
     df = pd.DataFrame(data)
-    df = df.drop(columns = ['month'])
+    df = df.drop(columns = ['id_parcol'])
 
     return df
 

@@ -9,12 +9,13 @@ if 'data_exporter' not in globals():
 
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "/home/src/gcp_srv/nba_gcp_credentials.json"
 
-bucket_name = 'dez-nba-datalake-boxscore'
+bucket_name = 'dez-nba-datalake'
+folder_name = 'player_boxscore'
 project_id = 'dez-nba-analytics'
 
 @data_exporter
 def export_data(data, *args, **kwargs):
-    data['match_date'] = data['game_date'].dt.date
+    data['month'] = data['game_date'].dt.month
 
     seasons = data['game_date'].dt.year.unique()
     gcs = pa.fs.GcsFileSystem()
@@ -22,23 +23,18 @@ def export_data(data, *args, **kwargs):
     for year in seasons:
         year_df = data[data['game_date'].dt.year == year]
 
-        for month in range(1,13):
-            month_df = year_df[year_df['game_date'].dt.month == month]
+        print(f'uploading data from {year}')
 
-            month_df.game_date = pd.to_datetime(month_df.game_date)
+        table = pa.Table.from_pandas(year_df)
 
-            print(f'uploading data from {month:02d}/{year}')
+        root_path = f'{bucket_name}/{folder_name}/{year}'
 
-            table = pa.Table.from_pandas(month_df)
-
-            root_path = f'{bucket_name}/{year}/{month:02d}'
-
-            pq.write_to_dataset(
-                table,
-                root_path=root_path,
-                partition_cols=['match_date'],
-                filesystem=gcs
-            )
+        pq.write_to_dataset(
+            table,
+            root_path=root_path,
+            partition_cols=['month'],
+            filesystem=gcs
+        )
 
         print(f'NBA Season {year} successfully ingested')
     # Specify your data exporting logic here

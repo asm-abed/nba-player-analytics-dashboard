@@ -10,9 +10,10 @@ if 'data_exporter' not in globals():
 
 @data_exporter
 def export_data_to_big_query(df: DataFrame, **kwargs) -> None:
+
     project_name = 'dez-nba-analytics'
     dataset = 'nba_database'
-    table_name = 'player_boxscore'
+    table_name = 'nba_teams'
 
     table_id = f'{project_name}.{dataset}.{table_name}'
     config_path = path.join(get_repo_path(), 'io_config.yaml')

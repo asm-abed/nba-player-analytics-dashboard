@@ -1,38 +1,37 @@
 blocks:
 - all_upstream_blocks_executed: true
   color: null
-  configuration:
-    dynamic: false
+  configuration: {}
   downstream_blocks:
-  - transform_pbp
+  - transform_scoring_plays
   executor_config: null
   executor_type: local_python
   has_callback: false
   language: python
-  name: pbp_load_to-gcs
+  name: load_gcs_pqfiles
   retry_config: null
   status: executed
   timeout: null
   type: data_loader
   upstream_blocks: []
-  uuid: pbp_load_to_gcs
+  uuid: load_gcs_pqfiles
 - all_upstream_blocks_executed: true
   color: null
   configuration: {}
   downstream_blocks:
-  - export_pbp_to_gcs
+  - pbp_to_bigquery
   executor_config: null
   executor_type: local_python
   has_callback: false
   language: python
-  name: transform_pbp
+  name: transform_scoring_plays
   retry_config: null
   status: executed
   timeout: null
   type: transformer
   upstream_blocks:
-  - pbp_load_to_gcs
-  uuid: transform_pbp
+  - load_gcs_pqfiles
+  uuid: transform_scoring_plays
 - all_upstream_blocks_executed: true
   color: null
   configuration: {}
@@ -41,26 +40,26 @@ blocks:
   executor_type: local_python
   has_callback: false
   language: python
-  name: export_pbp_to_gcs
+  name: pbp_to_bigquery
   retry_config: null
   status: executed
   timeout: null
   type: data_exporter
   upstream_blocks:
-  - transform_pbp
-  uuid: export_pbp_to_gcs
+  - transform_scoring_plays
+  uuid: pbp_to_bigquery
 cache_block_output_in_memory: false
 callbacks: []
 concurrency_config: {}
 conditionals: []
-created_at: '2024-03-26 12:44:29.056021+00:00'
+created_at: '2024-03-27 13:11:48.920022+00:00'
 data_integration: null
 description: null
 executor_config: {}
 executor_count: 1
 executor_type: null
 extensions: {}
-name: pbp_to_gcs_pq-par
+name: pbp_gcs_to_bigquery
 notification_config: {}
 remote_variables_dir: null
 retry_config: {}
@@ -70,6 +69,6 @@ settings:
 spark_config: {}
 tags: []
 type: python
-uuid: pbp_to_gcs_pq_par
+uuid: pbp_gcs_to_bigquery
 variables_dir: /home/src/mage_data/nba_pipelines
 widgets: []

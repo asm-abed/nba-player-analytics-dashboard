@@ -11,16 +11,16 @@ def transform(data, *args, **kwargs):
     df.date = pd.to_datetime(df.date)
 
     df.rename(columns={
-        'MIN': 'mins-played',
-        'FGM': 'field-goal-made',
-        'FGA': 'field-goal-attempt',
-        'FG%': 'field-goal-pct',
-        '3PM': 'three-pt-made',
-        '3PA': 'three-pt-attempt',
-        '3P%': 'three-pt-pct',
-        'FTM': 'free-throw-made',
-        'FTA': 'free-throw-attempt',
-        'FT%': 'free-throw-pct',
+        'MIN': 'mins_played',
+        'FGM': 'field_goal_made',
+        'FGA': 'field_goal_attempt',
+        'FG%': 'field_goal_pct',
+        '3PM': 'three_pt_made',
+        '3PA': 'three_pt_attempt',
+        '3P%': 'three_pt_pct',
+        'FTM': 'free_throw_made',
+        'FTA': 'free_throw_attempt',
+        'FT%': 'free_throw_pct',
         '+/-': 'plusminus',
         'type': 'season_type',
         'season': 'season_id',
@@ -29,9 +29,9 @@ def transform(data, *args, **kwargs):
         'playerid':'player_id'
         }, inplace=True)
 
-    df['field-goal-pct'] = df['field-goal-pct']/100
-    df['three-pt-pct'] = df['three-pt-pct']/100
-    df['free-throw-pct']= df['free-throw-pct']/100
+    df['field_goal_pct'] = df['field_goal_pct']/100
+    df['three_pt_pct'] = df['three_pt_pct']/100
+    df['free_throw_pct']= df['free_throw_pct']/100
 
     df.loc[~df['season_type'].isin(['regular', 'playoff']), 'season_type'] = 'Others'
     df.loc[df['season_type'] == 'regular', 'season_type'] = 'Regular Season'
@@ -42,7 +42,5 @@ def transform(data, *args, **kwargs):
 
 @test
 def test_output(output, *args) -> None:
-    """
-    Template code for testing the output of the block.
-    """
+    assert len(output['game_id'].isnull())>0, 'Output has invalid nulls'
     assert output is not None, 'The output is undefined'

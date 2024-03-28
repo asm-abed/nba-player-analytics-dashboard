@@ -12,14 +12,13 @@ import pyarrow.parquet as pq
 from pyarrow.fs import GcsFileSystem
 import os
 
-
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = "/home/src/gcp_srv/nba_gcp_credentials.json"
 project_id = 'dez-nba-analytics'
 
 @data_loader
 def load_data(*args, **kwargs):
     bucket_name = 'dez-nba-datalake'
-    blob_prefix = 'player_boxscore'
+    blob_prefix = 'scoring_plays'
     root_path = f"{bucket_name}/{blob_prefix}"    
     pa_table = pq.read_table(
         source=root_path,

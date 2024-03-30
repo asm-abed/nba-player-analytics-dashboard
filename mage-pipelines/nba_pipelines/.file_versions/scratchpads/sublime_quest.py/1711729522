@@ -1,4 +1,0 @@
-from datetime import date
-
-today = today()
-print(today())

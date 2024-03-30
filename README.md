@@ -105,7 +105,7 @@ Add your GCP Service Account file to mage-pipelines/gcp_srv/ folder. Go to io_co
 After then, mage should be up and functional. <br>
 
 Run the nba_api pipelines so you'll have a change to play at some data. You can tweak the dates to manipulate how much data you can process. <br>
-
+![Mage](./misc/mage.png?raw=true "Mage)
 ### 5.4 Run Spark transformations 
 Setup Dataproc Cluster as laid out in this [youtube tutorial](https://www.youtube.com/watch?v=osAiAYahvh8&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb&index=65)
 

@@ -13,19 +13,19 @@ The objectives of this specific project are:
 ## Index
 1. [**Dashboard**](https://github.com/asm-abed/nba-player-analytics-dashboard?tab=readme-ov-file#dashboard) <br>
 2. [**Architecture**](https://github.com/asm-abed/nba-player-analytics-dashboard?tab=readme-ov-file#architecture) <br>
-     2.1 [**Technologies Used**](https://github.com/asm-abed/nba-player-analytics-dashboard/main/README.md#technologies-used) <br>
-3. [**Dataset**](https://github.com/asm-abed/nba-player-analytics-dashboard/main/README.md#dataset) <br>
-     3.1 [**Kaggle NBA Database**](https://github.com/asm-abed/nba-player-analytics-dashboard/main/README.md#31-kaggle-nba-data-) <br>
+     2.1 [**Technologies Used**](https://github.com/asm-abed/nba-player-analytics-dashboard/blob/main/README.md#21-technologies-used) <br>
+3. [**Dataset**](https://github.com/asm-abed/nba-player-analytics-dashboard/blob/main/README.md#dataset) <br>
+     3.1 [**Kaggle NBA Database**](https://github.com/asm-abed/nba-player-analytics-dashboard/blob/main/README.md#31-kaggle-nba-data-) <br>
      3.2 [**nba_api data**](https://github.com/asm-abed/nba-player-analytics-dashboard/main/README.md#32-nba_api-data-) <br>
-     3.3 [**Player Points Prediction Model**](https://github.com/asm-abed/nba-player-analytics-dashboard/main/README.md#33-player-points-prediction-model-) <br>
-4. [**Workflow Orchestration**](https://github.com/asm-abed/nba-player-analytics-dashboard/main/README.md#workflow-orchestration) <br>
-     4.1 [**mage-pipelines filing structure**](https://github.com/asm-abed/nba-player-analytics-dashboard/blob/main/README.md#mage-pipelines-filing-structure) <br>
-5. [**Reproduce this project**](https://github.com/asm-abed/nba-player-analytics-dashboard/main/README.md#reproduce-this-project) <br>
-     5.1 [**Setting up Virtual Machine Environment in Google Cloud**](https://github.com/asm-abed/nba-player-analytics-dashboard/main/README.md#51-setting-up-virtual-machine-environment-in-google-cloud) <br>
-     5.2 [**Setup Service Account**](https://github.com/asm-abed/nba-player-analytics-dashboard/main/README.md#52-setup-service-account) <br>
-     5.3 [**Starting Mage Project**](https://github.com/asm-abed/nba-player-analytics-dashboard/main/README.md#53-starting-mage-project) <br>
-     5.4 [**Run Spark transformations**](https://github.com/asm-abed/nba-player-analytics-dashboard/main/README.md#54-run-spark-transformations) <br>
-     5.5 [**Partitions and Clusters**](https://github.com/asm-abed/nba-player-analytics-dashboard/main/README.md#55-partitions-and-clusters) <br>
+     3.3 [**Player Points Prediction Model**](https://github.com/asm-abed/nba-player-analytics-dashboard/blob/main/README.md#33-player-points-prediction-model-) <br>
+4. [**Workflow Orchestration**](https://github.com/asm-abed/nba-player-analytics-dashboard/blob/main/README.md#workflow-orchestration) <br>
+     4.1 [**mage-pipelines filing structure**](https://github.com/asm-abed/nba-player-analytics-dashboard/blob/main/README.md#41-mage-pipelines-filing-structure) <br>
+5. [**Reproduce this project**](https://github.com/asm-abed/nba-player-analytics-dashboard/blob/main/README.md#reproduce-this-project) <br>
+     5.1 [**Setting up Virtual Machine Environment in Google Cloud**](https://github.com/asm-abed/nba-player-analytics-dashboard/blob/main/README.md#51-setting-up-virtual-machine-environment-in-google-cloud) <br>
+     5.2 [**Setup Service Account**](https://github.com/asm-abed/nba-player-analytics-dashboard/blob/main/README.md#52-setup-service-account) <br>
+     5.3 [**Starting Mage Project**](https://github.com/asm-abed/nba-player-analytics-dashboard/blob/main/README.md#53-starting-mage-project) <br>
+     5.4 [**Run Spark transformations**](https://github.com/asm-abed/nba-player-analytics-dashboard/blob/main/README.md#54-run-spark-transformations) <br>
+     5.5 [**Partitions and Clusters**](https://github.com/asm-abed/nba-player-analytics-dashboard/blob/main/README.md#55-partitions-and-clusters) <br>
    
 
 

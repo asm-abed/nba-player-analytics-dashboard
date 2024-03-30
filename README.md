@@ -1,7 +1,7 @@
 <div align="center">
 	<br>
-	<a href="https://github.com/asm-abed/nba-player-analytics-dashboard/blob/main/misc/ubuntu%20color.png">
-		<img src="header.svg" width="800" height="400" alt="Click to see the source">
+	<a href="./misc/ubuntu.png">
+		<img src="ubuntu.png" width="800" height="400" alt="">
 	</a>
 	<br>
 </div>

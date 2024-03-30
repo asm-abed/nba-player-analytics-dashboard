@@ -10,24 +10,32 @@ The objectives of this specific project are:
  	- perform different transformations from this data and show it to a dashboard<br>
   	- this project also utilizes a player point prediction model that calculates a predicted points a player may score on the following match based on historical data <br>
 
-
-  
 # Index
-Resources Used
- - Dataset
-   	- Kaggle
-   	- nba_api data
-   	- NBA Performance Prediction Equation
- - Tools Used
-  	- Project Development: Through
-   	- Workflow Orchestration: Mage
-    	- Datalake: Google Cloud Storage
-        - Data Warehouse: BigQuery
-        - Data Transformations: Spark using Google Dataproc
-        - Data Visualization: Google Looker Studio
-Dashboard
+1. Dashboard <br>
+2. Architecture <br>
+3. Dataset
+	 - Kaggle NBA Database
+	 - nba_api data
+	 - NBA Player Performance Study
 
-Architecture
+
+
+# Dashboard
+You can acces the dashboard through this [link](https://lookerstudio.google.com/reporting/2af71728-04ed-40ea-89a0-9612950f50c6). 
+<br>
+### Page 1: Player Performance Dashboard
+![DB Page 1](./misc/dashboard1.png?raw=true "Dasboard Page 1")
+
+### Page 2: Player Season Performance and Prediction Table
+![DB Page 2](./misc/dashboard2.png?raw=true "Dasboard Page 2")
+
+
+
+
+
+
+
+# Architecture
 Workflow Orchestration
 
 

@@ -20,9 +20,7 @@ The objectives of this specific project are:
    3.3 Player Points Prediction Model <br>
 4. [**Workflow Orchestration**](https://github.com/asm-abed/nba-player-analytics-dashboard/edit/main/README.md#workflow-orchestration) <br>
    4.1 [**mage-pipelines filing structure**](https://github.com/asm-abed/nba-player-analytics-dashboard/blob/main/README.md#mage-pipelines-filing-structure) <br>
-   4.2 [**How to start mage project**](https://github.com/asm-abed/nba-player-analytics-dashboard/edit/main/README.md#42-how-to-start-mage-project)
-5. [**Data Warehousing**](
-
+5. Reproduce this project
 
 
 ## Dashboard
@@ -39,7 +37,7 @@ You can acces the dashboard through this [**link**](https://lookerstudio.google.
 
 ### 2.1 Technologies Used
 In the development of this project, the following tools are used:
-  - Google Compute Engine as virtual machine in creating pipelines
+  - Google Compute Engine as virtual machine in creating the pipelines
   - Docker to run mage
   - Mage as the main workflow orchestration tool
   - Google Cloud Storage for the datalake
@@ -62,32 +60,18 @@ In the development of this project, the following tools are used:
 ## Workflow Orchestration
 ![ETL Pipelines](./misc/workflow.png?raw=true "ETL Pipelines")
 
-I created two sets pipelines in Mage as shown, one to load from the Kaggle dataset (historical) and another to retrieve up-to-date data from nba_api and upload them all as partitioned parquet files in the GCS bucket. The pipeline for nba_api can be ran daily to retrieve the latest NBA match data. You can refer to this [**youtube tutorial**](https://www.youtube.com/watch?v=C0fNc8ZOpSI) of how to set instance schedules in Google Compute Engine for Mage pipelines. 
+I created two sets pipelines in Mage as shown, one to load from the Kaggle dataset (historical) and another to retrieve up-to-date data from nba_api and upload them all as partitioned parquet files in the GCS bucket. The pipeline for nba_api can be ran daily to retrieve the latest NBA match data. You can refer to this [**youtube tutorial**](https://www.youtube.com/watch?v=C0fNc8ZOpSI) on how to set instance schedules in Google Compute Engine for Mage pipelines. 
 
 ### 4.1 [mage-pipelines](./mage-pipelines) Filing Structure
 Mage pipelines are usually classified into three parts: Data Loaders, Transformers, and Data Exporters. In this repo, these folders contain the python scripts that consist each of the pipelines. 
 
-### 4.2 How to start mage project
-To start this mage project on your machine, go to the mage-pipeline directory:
-
+## Reproduce this project
+If you want to reproduce this project, here is the laid out steps to do that. 
+### Setting up Virtual Machine in Google Cloud
+   1. Generate SSH Key
 ```bash
-cd mage-pipelines
+mkdir .ssh
+cd .ssh
+ssh-keygen -t rsa -f ~/.ssh/<input-key-name> -C <input-your-username> -b 2048
 ```
-
-Make sure Docker Desktop is running and docker-compose is installed, and in the terminal, run:
-
-```bash
-docker-compose build
-docker-compose up
-```
-    
-When you're done just run the following code: 
-
-```bash
-docker-compose down
-```
-    
-## Data Warehousing
-I used BigQuery as my data warehouse
-
-
+   

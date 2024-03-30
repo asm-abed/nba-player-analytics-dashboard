@@ -1,14 +1,40 @@
-<div align="center">
-	<br>
-	<a href="./misc/ubuntu.png">
-		<img src="ubuntu.png" width="800" height="400" alt="">
-	</a>
-	<br>
-</div>
 # NBA PLAYER ANALYTICS DASHBOARD
+# Overview
 
-Hi! This is my repo is intended as my capstone project for DataTalks Club's Data Engineering Zoomcamp 2024! 
+This repo is developed as a capstone project for DataTalks Club's Data Engineering Zoomcamp 2024. The purpose of this project is to apply all the concepts and tools that we have learned and create an end-to-end data pipeline. 
+<br>
+<br>
+The objectives of this specific project are: 
+<br>
+	- to create end-to-end pipelines to store NBA player statistics data from 1997-present<br>
+ 	- perform different transformations from this data and show it to a dashboard<br>
+  	- this project also utilizes a player point prediction model that calculates a predicted points a player may score on the following match based on historical data <br>
+
+
+  
+# Index
+Resources Used
+ - Dataset
+   	- Kaggle
+   	- nba_api data
+   	- NBA Performance Prediction Equation
+ - Tools Used
+  	- Project Development: Through
+   	- Workflow Orchestration: Mage
+    	- Datalake: Google Cloud Storage
+        - Data Warehouse: BigQuery
+        - Data Transformations: Spark using Google Dataproc
+        - Data Visualization: Google Looker Studio
+Dashboard
+
+Architecture
+Workflow Orchestration
+
+
+
+
 
 # Project Objectives
 
-The objective of this project is to create end-to-end pipelines to store NBA player statistics data from 1997-present. From this data, I created transformations to show the summary of statistics per player per season and using a prediction model deviced by a sports analytics study, I also made some transformations that would put that model to test. 
+
+

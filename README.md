@@ -18,7 +18,8 @@ The objectives of this specific project are:
    3.1 Kaggle NBA Database <br>
    3.2 nba_api data <br>
    3.3 Player Points Prediction Model <br>
-5. 
+4. [**Workflow Orchestration**](https://github.com/asm-abed/nba-player-analytics-dashboard/edit/main/README.md#workflow-orchestration)
+   4.1 mage-pipelines filing structure
 
 
 
@@ -54,12 +55,14 @@ In the development of this project, the following tools are used:
 
   - **Player Points Prediction Model** <br>
    I got this model from a study which you'll fine [**here**](https://courses.cs.washington.edu/courses/cse547/23wi/old_projects/23wi/NBA_Performance.pdf). I used the equation they created which the one below:
-<br>
-<br>
-![formula](./misc/formula.png?raw=true "Prediction Formula")
+   ![formula](./misc/formula.png?raw=true "Prediction Formula")
 
-## ETL Pipelines
-Workflow Orchestration
+## Workflow Orchestration
+![ETL Pipelines](./misc/workflow.png?raw=true "ETL Pipelines")
+
+I created two sets pipelines in Mage as shown, one to load from the Kaggle dataset (historical) and another to retrieve up-to-date data from nba_api and upload them all as partitioned parquet files in the GCS bucket. The pipeline for nba_api can be ran daily to retrieve the latest NBA match data. You can refer to this [**youtube tutorial**](https://www.youtube.com/watch?v=C0fNc8ZOpSI) of how to set instance schedules in Google Compute Engine for Mage pipelines. 
+
+### [mage-pipelines](./mage-pipelines) Filing Structure
 
 
 

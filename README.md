@@ -8,8 +8,8 @@ This repo is developed as a capstone project for DataTalks Club's Data Engineeri
 The objectives of this specific project are: 
 <br>
    - to create end-to-end pipelines to store NBA player statistics data from 1997-present<br>
-   - perform different transformations from this data and show it to a dashboard<br>
-   - this project also utilizes a player point prediction model that calculates a predicted points a player may score on the following match based on historical data <br>
+   - perform different transformations from this data to create a season performance summary and show it to a dashboard<br>
+   - utilize a player point prediction model that calculates a predicted points a player may score on the following match based on historical data <br>
 
 ## Index
 1. [**Dashboard**](https://github.com/asm-abed/nba-player-analytics-dashboard?tab=readme-ov-file#dashboard) <br>

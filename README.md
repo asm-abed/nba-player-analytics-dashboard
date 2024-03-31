@@ -1,4 +1,4 @@
-![Project Header](./misc/header.mov?raw=true "NBA Player Analytics Dashboard")
+![Project Header](./misc/header.gif?raw=true "NBA Player Analytics Dashboard")
 #
 ## Overview
 

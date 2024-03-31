@@ -1,4 +1,5 @@
-# NBA PLAYER ANALYTICS DASHBOARD
+![Project Header](./misc/header.mov?raw=true "NBA Player Analytics Dashboard")
+#
 ## Overview
 
 This repo is developed as a capstone project for DataTalks Club's Data Engineering Zoomcamp 2024. The purpose of this project is to apply all the concepts and tools that we have learned and create an end-to-end data pipeline. 

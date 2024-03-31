@@ -39,7 +39,7 @@ You can acces the dashboard through this [**link**](https://lookerstudio.google.
 ![DB Page 2](./misc/dashboard2.png?raw=true "Dasboard Page 2")
 
 ## Architecture
-![Project Archi](./misc/architecture.png?raw=true "Architecture")
+![Project Archi](./misc/Architecture5.svg?raw=true "Architecture")
 
 ### 2.1 Technologies Used
 In the development of this project, the following tools are used:

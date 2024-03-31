@@ -48,7 +48,7 @@ In the development of this project, the following tools are used:
   - Mage as the main workflow orchestration tool
   - Google Cloud Storage for the datalake
   - Google BigQuery for the data warehouse
-  - Apache Spark for transformations
+  - PySpark for transformations
   - Google Dataproc for submitting Spark jobs
   - Looker Studio for the data visualization
 

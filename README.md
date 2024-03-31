@@ -61,7 +61,7 @@ In the development of this project, the following tools are used:
    I used the python library nba_api to retrieve boxscore data from the current season which pulls real time data from stats.nba.com api, the same source the Kaggle data is from. You'll find the endpoints and functions of this library in this [**Github Repo**](https://github.com/swar/nba_api)
 
  ###  3.3 **Player Points Prediction Model** <br>
-   I got this model from a study which you'll fine [**here**](https://courses.cs.washington.edu/courses/cse547/23wi/old_projects/23wi/NBA_Performance.pdf). I used the equation they created which the one below:
+   I got this model from a study which you'll find [**here**](https://courses.cs.washington.edu/courses/cse547/23wi/old_projects/23wi/NBA_Performance.pdf). I used the equation they created which the one below: <br>
    ![formula](./misc/formula.png?raw=true "Prediction Formula")
 
 ## Workflow Orchestration
@@ -90,7 +90,7 @@ To setup your VM environment, you can follow this [**youtube tutorial**](https:/
    - Select: Add Key & → Create new key → JSON → Create
    - Key will be downloaded onto local computer
 
-### 5.3 Starting Mage Project
+### 5.3 Running Mage Project
 Clone the git repo by:
 
 ```bash
@@ -102,17 +102,22 @@ cd nba-player-analytics-dashboard/mage-pipelines
 docker-compose build
 docker-compose up
 ```
-Add your GCP Service Account file to mage-pipelines/gcp_srv/ folder. Go to io_config.yaml and update the name of the service account json file.  <br>
-After then, mage should be up and functional. <br>
+Add your GCP Service Account file to mage-pipelines/gcp_srv/ folder. Go to io_config.yaml and update the name of the service account json file.  After then, mage should be up and functional.
+<br>
+<br>
 
-Run the nba_api pipelines so you'll have a change to play at some data. You can tweak the dates to manipulate how much data you can process. <br>
+Run the **nba_api pipelines** so you'll have a change to play at some data. You can tweak the dates to manipulate how much data you can process. <br>
 ![Mage](./misc/mage.png?raw=true "Mage")
+<br>
 ### 5.4 Run Spark transformations 
 Setup Dataproc Cluster as laid out in this [youtube tutorial](https://www.youtube.com/watch?v=osAiAYahvh8&list=PL3MmuxUbc_hJed7dXYoJw8DoCuVHhGEQb&index=65)
 
 Upload the python files to a GCS bucket. To Submit a job you can follow these snippets below:
 ![run Spark 1](./misc/runspark1.png?raw=true "run Spark 1")
 ![run Spark 2](./misc/runspark2.png?raw=true "run Spark 2")
+
+For **--season_id** argument, it starts with a prefix, either '2' if regular season or '4' if playoffs, followed by the year the season started. <br>
+For **--day_offset** argument, the default value should be 1, which gives the current date but you can add more days to cover more matches. <br>
 
 ### 5.5 Partitions and Clusters
 To implement partitions and clusters, run the query file [partitions.sql](./bigquery-warehousing/nba_database_partitioning.sql) in BigQuery
